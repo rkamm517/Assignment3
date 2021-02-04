@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Joel Hilton Film Collection</title>
+</head>
+
+<body>
+    <menu>
+        <a asp-action="Index">Home</a>
+        <a asp-action="MyPodcasts">My Podcasts</a>
+        <a asp-action="EnterMovie">Enter a Movie</a>
+        <a asp-action="Output">View Movies</a>
+    </menu>
+    <h1>@ViewBag.Title</h1>
+
+    @RenderBody()
+    <br />
+    <br />
+
+</body>
+
+</html>
