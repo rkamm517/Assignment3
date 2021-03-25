@@ -3,21 +3,30 @@
 
 <head>
     <title>The Joel Hilton Film Collection</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
 
 <body>
-    <menu>
+    <h1 class="toast-header">@ViewBag.Title</h1>
+    
+    <menu class="navbar navbar-dark">
         <a asp-action="Index">Home</a>
         <a asp-action="MyPodcasts">My Podcasts</a>
         <a asp-action="EnterMovie">Enter a Movie</a>
         <a asp-action="Output">View Movies</a>
     </menu>
-    <h1>@ViewBag.Title</h1>
+
 
     @RenderBody()
     <br />
     <br />
 
 </body>
+
+<footer class="footer">
+    Copyright Reed Kammerman 2021
+</footer>
 
 </html>

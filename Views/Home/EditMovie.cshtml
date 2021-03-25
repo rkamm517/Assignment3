@@ -2,29 +2,28 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewBag.Title = "Enter a Movie";
 }
+@model MovieInfo
 
-@model Assignment3.Models.MovieInfo
-<form asp-action="SubmitForm" method="post">
+<form asp-action="UpdateMovie" method="post">
     <div>
         <label asp-for="Category">Category:</label>
-        <input asp-for="Category"/>
+        <input asp-for="Category" />
     </div>
 
     <div>
         <label asp-for="Title">Title:</label>
-        <input asp-for="Title"/>
+        <input asp-for="Title" />
     </div>
 
     <div>
         <label asp-for="Year">Year:</label>
-        <input asp-for="Year"/>
+        <input asp-for="Year" />
     </div>
 
     <div>
         <label asp-for="Director">Director:</label>
-        <input asp-for="Director"/>
+        <input asp-for="Director" />
     </div>
 
     <div>
@@ -39,21 +38,19 @@
 
     <div>
         <label asp-for="Edited">Edited:</label>
-        <input asp-for="Edited"/>
+        <input asp-for="Edited" />
     </div>
 
     <div>
         <label asp-for="LentTo">Lent To:</label>
-        <input asp-for="LentTo"/>
+        <input asp-for="LentTo" />
     </div>
 
     <div>
         <label asp-for="Notes">Notes:</label>
-        <input asp-for="Notes"/>
+        <input asp-for="Notes" />
     </div>
 
-    <button type="submit">Save Movie</button>
+    <button type="submit">Update Movie</button>
     <div asp-validation-summary="All"></div>
 </form>
-
-

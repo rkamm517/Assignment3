@@ -10,6 +10,8 @@ namespace Assignment3.Models
     //Category, Title, Year, Director, Rating, Edited, Lent To:, Notes
     public class MovieInfo
     {
+        [Key]
+        public int MovieId { get; set; }
         [Required]
         public string Category { get; set; }
         [Required]
