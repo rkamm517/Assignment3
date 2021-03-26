@@ -2,14 +2,15 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewBag.Title = "Thank You";
+    ViewBag.Title = "Movie List";
 }
 
 @model IEnumerable<MovieInfo>
 
+<br /><br /><br />
 <div>
 
-    <table>
+    <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>Category</th>
@@ -38,7 +39,7 @@
 
                 <td>
                     <form asp-action="EditMovie" method="post">
-                        <input type="hidden" name="BookId"
+                        <input type="hidden" name="MovieId"
                                value="@x.MovieId" />
                         <button type="submit" class="btn btn-sm btn-dark">
                             Update
@@ -48,7 +49,7 @@
 
                 <td>
                     <form asp-action="DeleteMovie" method="post">
-                        <input type="hidden" name="BookId"
+                        <input type="hidden" name="MovieId"
                                value="@x.MovieId" />
                         <button type="submit" class="btn btn-sm btn-danger">
                             Remove

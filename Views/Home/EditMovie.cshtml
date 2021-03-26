@@ -50,7 +50,8 @@
         <label asp-for="Notes">Notes:</label>
         <input asp-for="Notes" />
     </div>
-
+    <input type="hidden" name="MovieId"
+           value="@Model.MovieId" />
     <button type="submit">Update Movie</button>
     <div asp-validation-summary="All"></div>
 </form>

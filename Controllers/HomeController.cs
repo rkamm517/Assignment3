@@ -13,8 +13,10 @@ namespace Assignment3.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        //Create a private context to hold the list of movie objects
         private MovieDbContext _context { get; set; }
         
+        //Set the context equal to the DbContext passed into the constructor
         public HomeController(ILogger<HomeController> logger, MovieDbContext context)
         {
             _logger = logger;
@@ -57,18 +59,22 @@ namespace Assignment3.Controllers
         }
 
         //Method to remove a movie
-        public IActionResult DeleteMovie(MovieInfo movie, int MovieId)
+        public IActionResult DeleteMovie(int MovieId)
         {
-            _context.Remove(_context.Movies.Where(m => movie.MovieId == MovieId));
+            MovieInfo selectedMovie = _context.Movies.Where(m => m.MovieId == MovieId).FirstOrDefault();
+            
+            _context.Remove(selectedMovie);
             _context.SaveChanges();
 
-            return View("Output");
+            return View("Output", _context.Movies);
         }
 
         //Method to edit a movie's information (edit form)
-        public IActionResult EditMovie(MovieInfo movie)
+        public IActionResult EditMovie(int MovieId)
         {
-            return View();
+            //Query to get selected movie object and pass it to update view
+            MovieInfo selectedMovie = _context.Movies.Where(m => m.MovieId == MovieId).FirstOrDefault();
+            return View(selectedMovie);
         }
 
         //Method to update a movie's information (save changes to an edited movie)
@@ -77,7 +83,7 @@ namespace Assignment3.Controllers
             _context.Update(movie);
             _context.SaveChanges();
 
-            return View("Output");
+            return View("Output", _context.Movies);
         }
 
         public IActionResult Privacy()
